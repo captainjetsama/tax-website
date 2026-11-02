@@ -1,0 +1,689 @@
+
+/* =================================
+   SPEEDY TAX RETURN
+   GLOBAL DESIGN SYSTEM
+================================= */
+
+:root {
+  --background: #F7F6F0;
+  --surface: #EFEEE6;
+  --green: #244A3B;
+  --green-light: #496D59;
+  --text: #303A32;
+  --muted: #81877D;
+  --border: #E3E2D9;
+  --accent: #B79C70;
+
+  --heading: 'Playfair Display', serif;
+  --body: 'DM Sans', sans-serif;
+  --container: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.header {
+  width: 100%;
+  min-height: 100px;
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+
+  position: relative;
+  z-index: 10;
+}
+
+.brand {
+  color: var(--green);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.7px;
+  white-space: nowrap;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navigation a {
+  color: var(--muted);
+  font-size: 16px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navigation a:hover,
+.navigation a.active {
+  color: var(--green);
+}
+
+.navigation a.active::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  bottom: -12px;
+  left: 45%;
+}
+
+/* =================================
+   COMMON TYPOGRAPHY
+================================= */
+
+.eyebrow {
+  display: block;
+  color: var(--green-light);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+}
+
+h1, h2 {
+  font-family: var(--heading);
+  font-weight: 400;
+  color: var(--green);
+}
+
+h1 em, h2 em {
+  color: var(--green-light);
+  font-weight: 400;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 600;
+
+  margin-top: 32px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--accent);
+
+  transition: gap 0.3s ease;
+
+  color: var(--green);
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+
+.text-link:hover {
+  gap: 12px;
+}
+
+/* =================================
+   HOMEPAGE HERO
+================================= */
+
+.hero {
+  width: 100%;
+  min-height: 580px;
+  padding: 100px 7%;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: var(--container);
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1,
+.page-hero h1 {
+  font-size: clamp(42px, 5.2vw, 66px);
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+}
+
+.hero-content > p {
+  max-width: 590px;
+  margin-top: 24px;
+
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.hero-decoration {
+  position: absolute;
+  right: -120px;
+  top: 65px;
+
+  width: 430px;
+  height: 430px;
+
+  border: 1px solid #E5E4D9;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.decoration-text {
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  white-space: nowrap;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+/* =================================
+   INNER PAGE HERO
+================================= */
+
+.page-hero {
+  width: 100%;
+  padding: 100px 7%;
+}
+
+.page-hero > * {
+  max-width: var(--container);
+}
+
+.page-hero .eyebrow {
+  margin-bottom: 28px;
+}
+
+.page-hero > p {
+  max-width: 620px;
+  margin-top: 28px;
+
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* =================================
+   ABOUT PAGE
+================================= */
+
+.about-intro {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 7%;
+  background: var(--surface);
+}
+
+.about-intro h2 {
+  font-size: clamp(32px, 4vw, 45px);
+}
+
+.about-intro > p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.services-section {
+  padding: 100px 7%;
+}
+
+.services-heading,
+.services-grid {
+  max-width: var(--container);
+}
+
+.services-heading {
+  margin-bottom: 45px;
+}
+
+.services-heading h2 {
+  font-size: clamp(32px, 4vw, 45px);
+  line-height: 1.35;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.service-card {
+  min-width: 0;
+  padding: 40px;
+  background: var(--surface);
+}
+
+.service-number {
+  color: var(--accent);
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.service-card h3 {
+  margin-top: 12px;
+  color: var(--green);
+  font-family: var(--heading);
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.service-card p {
+  margin-top: 13px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =================================
+   CAREERS PAGE
+================================= */
+
+.careers-content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 7%;
+}
+
+.careers-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 35px;
+  margin-bottom: 24px;
+}
+
+.careers-heading .eyebrow {
+  margin-bottom: 12px;
+}
+
+.careers-heading h2 {
+  font-size: 42px;
+}
+
+.careers-heading > p {
+  max-width: 350px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.job-list {
+  width: 100%;
+  border-top: 1px solid var(--border);
+}
+
+.job-item {
+  min-height: 80px;
+  padding: 25px 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  border-bottom: 1px solid var(--border);
+  transition: padding 0.3s ease;
+}
+
+.job-item:hover {
+  padding-left: 25px;
+  background: var(--surface);
+}
+
+.job-item h3 {
+  color: var(--green);
+  font-family: var(--heading);
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.job-item span {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.job-item a {
+  color: var(--green);
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+
+.general-application {
+  margin-top: 70px;
+  padding: 40px;
+  background: var(--surface);
+}
+
+.general-application h3 {
+  color: var(--green);
+  font-family: var(--heading);
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.general-application p {
+  color: var(--muted);
+  font-size: 18px;
+  margin-top: 12px;
+  line-height: 1.8;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+  width: 100%;
+  padding: 65px 7% 45px;
+
+  border-top: 1px solid var(--border);
+  background: #F1F0E9;
+
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-company {
+  color: var(--green);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.7px;
+}
+
+.footer-brand > p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+  margin-top: 18px;
+}
+
+.copyright {
+  color: var(--muted);
+  font-size: 14px;
+  padding-top: 40px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 35px;
+  min-width: 0;
+}
+
+.footer-column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-column h3 {
+  color: var(--green);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.footer-column a,
+.footer-column p {
+  color: var(--muted);
+  font-size: 16px;
+  overflow-wrap: anywhere;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: var(--green);
+}
+
+/* =================================
+   MOBILE MENU
+================================= */
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 23px;
+  height: 2px;
+  background: var(--green);
+  margin: 6px 0;
+  transition: 0.3s ease;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 768px) {
+
+  .header {
+    min-height: 78px;
+    padding: 0 6%;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+
+    width: 100%;
+    padding: 25px 6%;
+
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .navigation.open {
+    display: flex;
+  }
+
+  .navigation a.active::after {
+    display: none;
+  }
+
+  .hero {
+    min-height: 540px;
+    padding: 85px 7%;
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-decoration {
+    right: -300px;
+    opacity: 0.35;
+  }
+
+  .page-hero {
+    padding: 80px 7%;
+  }
+
+  .about-intro {
+    padding: 75px 7%;
+  }
+
+  .services-section {
+    padding: 75px 7%;
+  }
+
+  .service-card {
+    padding: 28px;
+  }
+
+  .values-section {
+    padding: 75px 7%;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .careers-content {
+    padding: 75px 7%;
+  }
+
+  .careers-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .careers-heading h2 {
+    font-size: 34px;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 50px 7% 35px;
+  }
+
+  .copyright {
+    margin-top: 25px;
+    padding-top: 0;
+  }
+}
+
+/* =================================
+   SMALL MOBILE SCREENS
+================================= */
+
+@media (max-width: 480px) {
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: 37px;
+  }
+
+  .hero-content > p,
+  .page-hero > p {
+    font-size: 13px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 30px 25px;
+  }
+
+  .values-section h2 {
+    font-size: 32px;
+  }
+
+  .job-item {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .general-application {
+    padding: 30px 25px;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .footer-company {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
