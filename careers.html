@@ -71,8 +71,8 @@
           <span>Full-time · Taxation</span>
         </div>
 
-        <a href="mailto:careers@speedytaxreturn.com?subject=Tax%20Consultant%20Application">
-          Apply now
+        <a href="job-info.html">
+          Know more
         </a>
       </div>
 
@@ -81,8 +81,8 @@
           <h3>Accounts Executive</h3>
           <span>Full-time · Accounting</span>
         </div>
-        <a href="mailto:careers@speedytaxreturn.com?subject=Accounts%20Executive%20Application">
-          Apply now
+        <a href="job-info.html">
+          Know more
         </a>
       </div>
 
@@ -92,7 +92,9 @@
           <span>Full-time · Advisory</span>
         </div>
 
-        <a href="mailto:careers@speedytaxreturn.com?subject=Junior%20Associate%20Application">Apply now</a>
+        <a href="job-info.html">
+          Know more
+        </a>
       </div>
     </div>
 
@@ -106,12 +108,218 @@
         Introduce yourself
       </a>
     </div>
+
+</section>
+
+<!-- APPLICATION FORM -->
+  <section class="application-section" id="application">
+    <div class="application-heading">
+      <span class="eyebrow">JOIN OUR TEAM</span>
+      <h2>
+        Let's get to know <em>you.</em>
+      </h2>
+      <p>
+        Interested in working with us?
+        Fill out the application below and attach your resume.
+        We'll review your application and get in touch.
+      </p>
+    </div>
+
+    <form
+      class="application-form"
+      id="careerForm"
+      action="https://formsubmit.co/careers@speedytaxreturn.com"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+
+      <!-- EMAIL CONFIGURATION -->
+      <input type="hidden" name="_subject" value="New Job Application - Speedy Tax Return">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      
+      <!-- ANTI-SPAM HONEYPOT -->
+      <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+      <!-- PERSONAL INFORMATION -->
+
+      <div class="form-section-title">
+        <h3>Personal information</h3>
+        <span>01 / 03</span>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="firstName">First name *</label>
+          <input
+            type="text"
+            id="firstName"
+            name="First Name"
+            placeholder="Enter your first name"
+            autocomplete="given-name"
+            required
+          >
+        </div>
+
+
+        <div class="form-group">
+          <label for="lastName">Last name *</label>
+          <input
+            type="text"
+            id="lastName"
+            name="Last Name"
+            placeholder="Enter your last name"
+            autocomplete="family-name"
+            required
+          >
+        </div>
+
+
+        <div class="form-group">
+          <label for="email">Email address *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+
+        <div class="form-group">
+          <label for="phone">Phone number *</label>
+          <input
+            type="tel"
+            id="phone"
+            name="Phone Number"
+            placeholder="+91 00000 00000"
+            autocomplete="tel"
+            required
+          >
+        </div>
+
+
+        <div class="form-group full-width">
+          <label for="location">Current city / location *</label>
+          <input
+            type="text"
+            id="location"
+            name="Current Location"
+            placeholder="Enter your city"
+            autocomplete="address-level2"
+            required
+          >
+        </div>
+
+
+        <div class="form-group full-width">
+          <label for="position">Position applying for *</label>
+          <select id="position" name="Position Applying For" required>
+            <option value="" disabled selected>
+              Select a position
+            </option>
+            <option value="Tax Consultant">
+              Tax Consultant
+            </option>
+            <option value="Accounts Executive">
+              Accounts Executive
+            </option>
+            <option value="Junior Associate">
+              Junior Associate
+            </option>
+          </select>
+        </div>
+      </div>
+
+
+      <!-- COVER MESSAGE -->
+      <div class="form-section-title">
+        <h3>A little about yourself</h3>
+        <span>02 / 03</span>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="message">
+          Introduction / Cover message
+        </label>
+
+        <textarea
+          id="message"
+          name="Introduction"
+          rows="5"
+          placeholder="Tell us a little about yourself, your experience, and why you'd like to join our team..."
+        ></textarea>
+      </div>
+
+
+      <!-- RESUME UPLOAD -->
+      <div class="form-section-title">
+        <h3>Your resume</h3>
+        <span>03 / 03</span>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="resume">Upload your resume *</label>
+        <div class="upload-area" id="uploadArea">
+
+          <input
+            type="file"
+            id="resume"
+            name="attachment"
+            accept=".pdf,application/pdf"
+            required
+          >
+          <div class="upload-content">
+            <div class="upload-icon">↑</div>
+            <p class="upload-title">
+              Click to upload your resume
+            </p>
+            <p class="upload-description">
+              PDF · Maximum file size 10 MB
+            </p>
+
+            <span id="fileName" class="file-name">No file selected</span>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- PRIVACY CONSENT -->
+      <div class="consent-group">
+
+        <input
+          type="checkbox"
+          id="consent"
+          name="Privacy Consent"
+          value="Agreed"
+          required
+        >
+
+        <label for="consent">
+          I confirm that the information provided is accurate
+          and consent to Speedy Tax Return using my details
+          and resume for recruitment purposes.
+        </label>
+      </div>
+
+      <!-- SUBMIT -->
+      <div class="form-submit">
+        <button type="submit" id="submitButton">
+          Submit application
+        </button>
+        <p>
+          Your information will be used for recruitment purposes.
+        </p>
+
+      </div>
+    </form>
   </section>
 
 </main>
 
-<footer class="footer" id="footer">
 
+<footer class="footer" id="footer">
   <div class="footer-brand">
     <a href="index.html" class="footer-company">Speedy Tax Return</a>
 
@@ -120,9 +328,7 @@
       Making every return count.
     </p>
 
-    <span class="copyright">
-      © 2026 Speedy Tax Return. All rights reserved.
-    </span>
+    <span class="copyright">© 2026 Speedy Tax Return. All rights reserved.</span>
   </div>
 
   <div class="footer-columns">
@@ -137,7 +343,7 @@
     <div class="footer-column">
       <h3>Contact Us</h3>
       <a href="mailto:info@speedytaxreturn.com">📧 info@speedytaxreturn.com</a>
-      <a href="tel:+910000000000">☎️ +1 12345 12345</a>
+      <a href="tel:+910000000000">📞 +1 877-865-0186</a>
       <p>📍 3355 Joywood Terrace J113<br>Boca Raton, FL 33431<br>United States of America.</p>
     </div>
   </div>
