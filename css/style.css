@@ -13,7 +13,8 @@
   --border: #E3E2D9;
   --accent: #B79C70;
 
-  --heading: 'Playfair Display', serif;
+  /*--heading: 'Playfair Display', serif;*/
+  --heading: sans-serif;
   --body: 'DM Sans', sans-serif;
   --container: 1200px;
 }
