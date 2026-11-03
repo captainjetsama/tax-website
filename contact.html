@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Speedy Tax Return</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <a href="index.html" class="brand">Speedy Tax Return</a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    </button>
+    <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+</header>
+
+
+<main>
+
+    <!-- CONTACT PAGE HERO -->
+    <section class="page-hero">
+        <span class="eyebrow">GET IN TOUCH</span>
+
+        <h1>
+            Let's make your<br>
+            tax process <em>simpler.</em>
+        </h1>
+
+        <p>
+            Have a question about our tax preparation services?
+            We're here to help. Reach out to our team and we'll
+            get back to you as soon as possible.
+        </p>
+    </section>
+
+
+    <!-- CONTACT INFORMATION -->
+    <section class="services-section">
+
+        <div class="services-heading">
+            <span class="eyebrow">CONTACT INFORMATION</span>
+            <h2>We're here when you <em>need us.</em></h2>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <span class="service-number"></span>
+                <h3>Call Our Team</h3>
+                <p>
+                    Prefer speaking with someone directly?<br>
+                    Give us a call during business hours.
+                </p>
+                <p>
+                    <a href="tel:+18778650186" class="text-link">
+                        +1 877-865-0186
+                    </a>
+                </p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number"></span>
+                <h3>Email Us</h3>
+                <p>
+                    Send us your general questions and
+                    inquiries.<br> Our team will be happy to assist.
+                </p>
+                <p>
+                    <a href="mailto:admin@speedyreturntoday.com"
+                       class="text-link">
+                        admin@speedyreturntoday.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number"></span>
+                <h3>Our Office</h3>
+                <p>
+                    400 Fairway Drive, Suite 206<br>
+                    Deerfield Beach, FL 33441<br>
+                    United States
+                </p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number"></span>
+                <h3>Business Hours</h3>
+                <p>
+                    Monday – Friday<br>
+                    9:00 AM – 5:00 PM
+                </p>
+                <p>
+                    We look forward to hearing from you.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT FORM -->
+    <section class="application-section">
+
+        <div class="application-heading">
+            <span class="eyebrow">SEND US A MESSAGE</span>
+
+            <h2>How can we <em>help you?</em></h2>
+
+            <p>
+                Complete the form below and a member of our
+                team will reach out to you.
+            </p>
+        </div>
+
+
+        <form
+            class="application-form"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+        >
+
+            <input type="hidden" name="form-name" value="contact">
+
+            <!-- HONEYPOT -->
+            <div class="honeypot">
+                <label>
+                    Do not fill this out:
+                    <input name="bot-field">
+                </label>
+            </div>
+
+
+            <!-- PERSONAL INFORMATION -->
+            <div class="form-section-title">
+                <h3>Your Information</h3>
+                <span>01 / 02</span>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="first-name">First Name *</label>
+                    <input
+                        type="text"
+                        id="first-name"
+                        name="first_name"
+                        placeholder="Enter your first name"
+                        autocomplete="given-name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="last-name">Last Name *</label>
+                    <input
+                        type="text"
+                        id="last-name"
+                        name="last_name"
+                        placeholder="Enter your last name"
+                        autocomplete="family-name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+1 (___) ___-____"
+                        autocomplete="tel"
+                    >
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="subject">How Can We Help? *</label>
+
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>
+                            Select an inquiry type
+                        </option>
+                        <option value="Individual Tax Preparation">
+                            Individual Tax Preparation
+                        </option>
+                        <option value="Business Tax Preparation">
+                            Business Tax Preparation
+                        </option>
+                        <option value="Self-Employed Tax Services">
+                            Self-Employed Tax Services
+                        </option>
+                        <option value="General Inquiry">
+                            General Inquiry
+                        </option>
+                        <option value="Other">
+                            Other
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+            <div class="form-section-title">
+                <h3>Your Message</h3>
+                <span>02 / 02</span>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group full-width">
+                    <label for="message">Message *</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us how we can help..."
+                        required
+                    ></textarea>
+                </div>
+
+            </div>
+
+
+            <!-- OPTIONAL SMS CONSENT -->
+            <div class="consent-group">
+
+                <input
+                    type="checkbox"
+                    id="sms-consent"
+                    name="sms_consent"
+                    value="yes"
+                >
+                <label for="sms-consent">
+                    By checking this box, I agree to receive
+                    recurring SMS text messages from Speedy Tax
+                    Return at the phone number provided, including
+                    customer care and service-related messages.
+                    Message frequency varies. Message and data rates
+                    may apply.
+
+                    Reply STOP to opt out at any time.
+                    Reply HELP for assistance.
+
+                    Consent is not a condition of purchasing
+                    any goods or services.
+
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    |
+                    <a href="/terms-and-conditions">Terms & Conditions</a>.
+                </label>
+            </div>
+
+            <!-- FORM SUBMISSION -->
+            <div class="form-submit">
+                <button type="submit">
+                    Send Message <span>→</span>
+                </button>
+                <p>
+                    Your information will only be used to respond
+                    to your inquiry. Please do not include Social
+                    Security numbers, tax identification numbers,
+                    or other sensitive financial information.
+                </p>
+            </div>
+
+        </form>
+    </section>
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">  
+    <div class="footer-brand">  
+        <a href="index.html" class="footer-company">
+            Speedy Tax Return
+        </a>
+
+        <p>
+            Professional tax preparation services<br>for individuals and businesses in every state.
+        </p>
+
+        <span class="copyright">
+            © 2026 Speedy Tax Return. All rights reserved.
+        </span>
+    </div>
+
+    <div class="footer-columns">
+        <div class="footer-column">
+            <h3>SITE</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="careers.html">Careers</a>
+            <a href="#footer">Contact</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>CONTACT US</h3>
+            <a href="mailto:admin@speedyreturntoday.com">📧 admin@speedyreturntoday.com</a>
+            <a href="tel:+18778650186">📞 +1 877-865-0186</a>
+            <p>📍 400 Fairway Drive, Suite 206<br>Deerfield Beach, FL 33441<br>United States of America.</p>
+            <p>Monday — Friday, 9:00 AM — 5:00 PM</p>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,10 +1,9 @@
 /* =================================
-   SPEEDY TAX RETURN
-   GLOBAL DESIGN SYSTEM
+   SPEEDY TAX RETURN GLOBAL DESIGN
 ================================= */
 
 :root {
-  --background: #F7F6F0;
+  --background: #fff;
   --surface: #EFEEE6;
   --green: #244A3B;
   --green-light: #496D59;
@@ -14,6 +13,7 @@
   --accent: #B79C70;
 
   /*--heading: 'Playfair Display', serif;*/
+  /*--heading: 'DM Sans', sans-serif;*/
   --heading: sans-serif;
   --body: 'DM Sans', sans-serif;
   --container: 1200px;
@@ -141,7 +141,7 @@ h1 em, h2 em {
   font-size: 20px;
   font-weight: 600;
 
-  margin-top: 12px;
+  margin-top: 18px;
   padding-bottom: 2px;
   border-bottom: 1px solid var(--accent);
 
@@ -183,6 +183,15 @@ h1 em, h2 em {
   letter-spacing: -1.5px;
 }
 
+.hero-content > p {
+  max-width: 1000px;
+  margin-top: 12px;
+
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.8;
+}
+
 .info-card {
     max-width: 675px;
     font-size: 20px;
@@ -202,16 +211,6 @@ h1 em, h2 em {
     color: var(--muted);
 
 }
-
-.hero-content > p {
-  max-width: 900px;
-  margin-top: 24px;
-
-  color: var(--muted);
-  font-size: 20px;
-  line-height: 1.8;
-}
-
 
 /* =================================
    PAGE HERO SERVICES OVERRIDES
@@ -233,9 +232,7 @@ h1 em, h2 em {
 .page-hero .services-grid {
     max-width: 100%;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    /*gap: 16px;*/
 }
-
 
 .hero-decoration {
   position: absolute;
@@ -267,7 +264,6 @@ h1 em, h2 em {
 }
 
 
-
 /* =================================
    INNER PAGE HERO
 ================================= */
@@ -287,7 +283,7 @@ h1 em, h2 em {
 
 .page-hero > p {
   max-width: 900px;
-  margin-top: 28px;
+  margin-top: 12px;
 
   color: var(--muted);
   font-size: 20px;
@@ -298,11 +294,24 @@ h1 em, h2 em {
    ABOUT PAGE
 ================================= */
 
+.about-services-section {
+    width: 100%;
+    max-width: var(--container);
+    margin: auto;
+}
+
+.about-services-section .services-heading {
+    max-width: 100%;
+}
+
+.about-services-section .services-grid {
+    max-width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .about-intro {
   max-width: 1200px;
-  margin: auto;
-  padding: 60px 7%;
-  background: var(--surface);
+  padding: 32px 7%;
 }
 
 .about-intro h2 {
@@ -311,13 +320,13 @@ h1 em, h2 em {
 
 .about-intro > p {
   color: var(--muted);
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.8;
-  white-space: pre-line;
+  margin-top: 18px;
 }
 
 .services-section {
-  padding: 60px 7%;
+  padding: 32px 7%;
 }
 
 .services-heading,
@@ -356,7 +365,7 @@ h1 em, h2 em {
   color: var(--green);
   font-family: var(--heading);
   font-weight: 500;
-  font-size: 32px;
+  font-size: 30px;
 }
 
 .service-card p {
@@ -441,6 +450,10 @@ h1 em, h2 em {
   background: var(--surface);
 }
 
+.job-item a:hover{
+    border-bottom: 1px solid var(--accent);
+}
+
 .job-item h3 {
   color: var(--green);
   font-family: var(--heading);
@@ -458,7 +471,6 @@ h1 em, h2 em {
   color: var(--green);
   font-size: 18px;
   font-weight: 500;
-  border-bottom: 1px solid var(--accent);
   padding-bottom: 2px;
   white-space: nowrap;
 }
@@ -481,6 +493,13 @@ h1 em, h2 em {
   font-size: 18px;
   margin-top: 12px;
   line-height: 1.8;
+}
+
+.general-application li {
+  font-size: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+  list-style-position: inside;
 }
 
 /* =================================
