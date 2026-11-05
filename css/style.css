@@ -3,17 +3,17 @@
 ================================= */
 
 :root {
-  --background: #fff;
-  --surface: #EFEEE6;
-  --green: #244A3B;
-  --green-light: #496D59;
-  --text: #303A32;
-  --muted: #81877D;
-  --border: #E3E2D9;
-  --accent: #B79C70;
+  --background: #FFF;
+  --text-heading: #000;
+  --text-subheading: #FFF;
+  --accent: #0070A8;
+  --surface-muted: #F5F5F5;
+
+  --footer-heading: #FFF;
+  --footer-bg: #0C1A28;
+  --footer-muted: #9DB2BF;
 
   /*--heading: 'Playfair Display', serif;*/
-  /*--heading: 'DM Sans', sans-serif;*/
   --heading: sans-serif;
   --body: 'DM Sans', sans-serif;
   --container: 1200px;
@@ -27,7 +27,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 30px;
+  scroll-padding-top: 24px;
 }
 
 body {
@@ -35,7 +35,7 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   background: var(--background);
-  color: var(--text);
+  color: var(--text-heading);
   font-family: var(--body);
   -webkit-font-smoothing: antialiased;
 }
@@ -57,13 +57,14 @@ p {
   width: 100%;
   min-height: 80px;
   padding: 0 7%;
+  margin: auto;
 
   display: flex;
   position: sticky;
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--footer-bg);
   
   top: 0;
   left: 0;
@@ -71,8 +72,13 @@ p {
   background: var(--background);
 }
 
+.logo {
+    width: auto;
+    height: 52px;
+}
+
 .brand {
-  color: var(--green);
+  color: var(--text-heading);
   font-size: 32px;
   font-weight: 600;
   letter-spacing: -0.7px;
@@ -86,15 +92,16 @@ p {
 }
 
 .navigation a {
-  color: var(--muted);
+  color: var(--text-heading);
   font-size: 18px;
+  font-weight: 500;
   transition: color 0.3s ease;
   position: relative;
 }
 
 .navigation a:hover,
 .navigation a.active {
-  color: var(--green);
+  color: var(--accent);
 }
 
 .navigation a.active::after {
@@ -114,37 +121,27 @@ p {
 
 .eyebrow {
   display: block;
-  color: var(--green-light);
-  font-size: 14px;
-  font-weight: 600;
+  color: var(--text-heading);
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: 2px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 h1, h2 {
   font-family: var(--heading);
-  font-weight: 400;
-  color: var(--green);
-}
-
-h1 em, h2 em {
-  color: var(--green-light);
-  font-weight: 400;
 }
 
 .text-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
-  color: var(--green);
-  font-size: 20px;
+  color: var(--text-subheading);
+  font-size: 21px;
   font-weight: 600;
-
   margin-top: 18px;
   padding-bottom: 2px;
-  border-bottom: 1px solid var(--accent);
-
+  border-bottom: 2px solid var(--text-subheading);
   transition: gap 0.3s ease;
   white-space: nowrap;
 }
@@ -154,19 +151,18 @@ h1 em, h2 em {
 }
 
 /* =================================
-   HOMEPAGE HERO
+   HOMEPAGE HEADING HERO
 ================================= */
 
 .hero {
   width: 100%;
   min-height: 580px;
-  padding: 60px 7%;
-
+  padding: 4rem 7%;
   display: flex;
   align-items: center;
-
   position: relative;
   overflow: hidden;
+  background: var(--footer-bg);
 }
 
 .hero-content {
@@ -176,9 +172,10 @@ h1 em, h2 em {
   z-index: 2;
 }
 
-.hero h1,
-.page-hero h1 {
-  font-size: 64px;
+.hero h1 {
+  color: white;
+  font-size: 72px;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -1.5px;
 }
@@ -187,199 +184,136 @@ h1 em, h2 em {
   max-width: 1000px;
   margin-top: 12px;
 
-  color: var(--muted);
+  color: var(--footer-muted);
   font-size: 20px;
   line-height: 1.8;
 }
 
-.info-card {
-    max-width: 675px;
-    font-size: 20px;
-    margin-top: 40px;
-    padding: 24px;
-    background: var(--surface);
+
+/* =================================
+   PAGE HEADING
+================================= */
+
+#page-heading h1 {
+    font-size: 36px;
 }
 
-.info-card h2 {
-    font-family: var(--body);
-    font-weight: 500;
-}
-
-.info-card p {
-    font-size: 20px;
-    margin-top: 12px;
-    color: var(--muted);
-
+#page-heading {
+    min-height: 0;
+    padding: 0.8rem 7%;
 }
 
 /* =================================
-   PAGE HERO SERVICES OVERRIDES
+   HOMEPAGE INTRO HERO
 ================================= */
 
-.page-hero .services-section {
-    width: 100%;
-    max-width: var(--container);
-    margin: auto;
-    margin-top: 32px;
-    padding: 0;
+.intro-hero {
+  width: 100%;
+  padding: 50px 7%;
 }
 
-.page-hero .services-heading {
+.intro-hero > p {
+  max-width: 900px;
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.8;
+  color: var(--text-heading);
+}
+
+.intro-hero h1 {
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+}
+
+.intro-services-section {
+    width: 100%;
+    max-width: var(--container);
+    margin-top: 32px;
+}
+
+.intro-hero .services-heading {
     max-width: 100%;
     margin: 0;
 }
 
-.page-hero .services-grid {
+.intro-hero .services-grid {
     max-width: 100%;
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.hero-decoration {
-  position: absolute;
-  right: -120px;
-  top: 65px;
-
-  width: 430px;
-  height: 430px;
-
-  border: 1px solid #E5E4D9;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.decoration-text {
-  position: absolute;
-  bottom: 55px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  white-space: nowrap;
-  font-size: 8px;
-  letter-spacing: 2px;
-  color: var(--muted);
-}
-
-
-/* =================================
-   INNER PAGE HERO
-================================= */
-
-.page-hero {
-  width: 100%;
-  padding: 60px 7%;
-}
-
-.page-hero > * {
-  max-width: var(--container);
-}
-
-.page-hero .eyebrow {
-  margin-bottom: 28px;
-}
-
-.page-hero > p {
-  max-width: 900px;
-  margin-top: 12px;
-
-  color: var(--muted);
-  font-size: 20px;
-  line-height: 1.8;
+#services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 /* =================================
-   ABOUT PAGE
+   INFO CARD
 ================================= */
 
-.about-services-section {
-    width: 100%;
-    max-width: var(--container);
-    margin: auto;
+.info-card {
+    max-width: 50%;
+    font-size: 20px;
+    margin-top: 40px;
+    padding: 24px;
+    background: var(--accent);
+    color: var(--surface-muted);
 }
 
-.about-services-section .services-heading {
-    max-width: 100%;
+.info-card h2 {
+    font-family: var(--body);
+    font-weight: 600;
+    color: var(--text-subheading);
 }
 
-.about-services-section .services-grid {
-    max-width: 100%;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+.info-card p {
+    font-size: 20px;
+    margin-top: 18px;
+    color: var(--surface-muted);
+
 }
 
-.about-intro {
-  max-width: 1200px;
-  padding: 32px 7%;
-}
+/* =================================
+   SERVICES
+================================= */
 
-.about-intro h2 {
-  font-size: 46px;
-}
-
-.about-intro > p {
-  color: var(--muted);
-  font-size: 20px;
-  line-height: 1.8;
-  margin-top: 18px;
-}
-
-.services-section {
-  padding: 32px 7%;
-}
-
-.services-heading,
 .services-grid {
   max-width: var(--container);
-}
-
-.services-heading {
-  margin-bottom: 45px;
-}
-
-.services-heading h2 {
-  font-size: 46px;
-  line-height: 1.35;
-}
-
-.services-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
 }
 
 .service-card {
-  min-width: 0;
-  padding: 40px;
-  background: var(--surface);
+  padding: 32px;
+  background: var(--accent);
 }
 
 .service-number {
-  color: var(--accent);
-  font-size: 18px;
+  color: var(--surface-muted);
+  font-size: 32px;
   letter-spacing: 2px;
 }
 
 .service-card h3 {
-  color: var(--green);
+  color: var(--text-subheading);
   font-family: var(--heading);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 30px;
 }
 
 .service-card p {
-  margin-top: 12px;
-  color: var(--muted);
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 8px;
+  color: var(--surface-muted);
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 24px;
+  margin-bottom: 10px;
 }
 
 .service-card li {
   font-size: 18px;
-  color: var(--muted);
   line-height: 1.8;
+  color: var(--surface-muted);
   list-style-position: inside;
 }
 
@@ -387,75 +321,55 @@ h1 em, h2 em {
   content: "✓ ";
 }
 
+/* =================================
+   SERVICES DISCLAIMER NOTE
+================================= */
+
 .service-disclaimer {
-    margin-top: 24px;
-    color: var(--muted);
-    font-size: 16px;
+    max-width: 100%;
+    margin-top: 32px;
+    font-size: 15px;
     font-weight: 500;
+    color: var(--text-heading);
 }
 
 /* =================================
-   CAREERS PAGE
+   SERVICES INFO CARD
+================================= */
+
+#service-info-card {
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+/* =================================
+   CAREERS
 ================================= */
 
 .careers-content {
-  max-width: 1200px;
   margin: auto;
-  padding: 0 7% 40px 7%;
-}
-
-.careers-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 35px;
-  margin-bottom: 24px;
-}
-
-.careers-heading .eyebrow {
-  margin-bottom: 12px;
-}
-
-.careers-heading h2 {
-  font-size: 42px;
-}
-
-.careers-heading > p {
-  max-width: 350px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
+  width: 100%;
+  padding: 50px 7%;
 }
 
 .job-list {
   width: 100%;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--text-heading);
 }
 
 .job-item {
   min-height: 80px;
   padding: 25px 10px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--text-heading);
   transition: padding 0.3s ease;
 }
 
-.job-item:hover {
-  padding-left: 25px;
-  background: var(--surface);
-}
-
-.job-item a:hover{
-    border-bottom: 1px solid var(--accent);
-}
-
 .job-item h3 {
-  color: var(--green);
+  color: var(--text-heading);
   font-family: var(--heading);
   font-size: 24px;
   font-weight: 400;
@@ -464,42 +378,24 @@ h1 em, h2 em {
 
 .job-item span {
   font-size: 16px;
-  color: var(--muted);
+  color: var(--text-heading);
 }
 
 .job-item a {
-  color: var(--green);
+  color: var(--text-heading);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   padding-bottom: 2px;
   white-space: nowrap;
+  border-bottom: 2px solid var(--accent);
 }
 
-.general-application {
-  margin-top: 70px;
-  padding: 40px;
-  background: var(--surface);
+.job-item a:hover{
+    color: var(--accent);
 }
 
-.general-application h3 {
-  color: var(--green);
-  font-family: var(--heading);
-  font-size: 30px;
-  font-weight: 400;
-}
-
-.general-application p {
-  color: var(--muted);
-  font-size: 18px;
-  margin-top: 12px;
-  line-height: 1.8;
-}
-
-.general-application li {
-  font-size: 18px;
-  color: var(--muted);
-  line-height: 1.8;
-  list-style-position: inside;
+#general-application-info-card {
+    max-width: 100%;
 }
 
 /* =================================
@@ -508,68 +404,67 @@ h1 em, h2 em {
 
 .application-section {
   width: 100%;
-  padding: 95px 7%;
-  background: var(--surface);
+  padding: 50px 7%;
+  background: var(--accent);
 }
 
-.application-heading {
-  max-width: 1200px;
-  margin: 0 auto 24px;
-}
-
-.application-heading .eyebrow {
-  margin-bottom: 10px;
+.application-heading .eyebrow{
+  color: var(--text-subheading);  
 }
 
 .application-heading h2 {
-  font-size: 42px;
+  font-size: 36px;
+  color: var(--text-subheading);
 }
 
 .application-heading > p {
-  max-width: 570px;
-  margin-top: 20px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
+  max-width: 900px;
+  margin-top: 12px;
+  color: var(--text-subheading);
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 32px;
 }
+
+
+/* =================================
+   APPLICATION FORM
+================================= */
 
 .application-form {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
   padding: 50px;
   background: var(--background);
-  border: 1px solid var(--border);
 }
-
-/* FORM SECTION HEADINGS */
 
 .form-section-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid var(--border);
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--text-heading);
 }
 
 .form-section-title:not(:first-of-type) {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .form-section-title h3 {
-  color: var(--green);
+  color: var(--text-heading);
   font-family: var(--heading);
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 28px;
+  font-weight: 500;
 }
 
 .form-section-title span {
   color: var(--accent);
-  font-size: 14px;
-  letter-spacing: 1.5px;
+  font-size: 18px;
 }
 
-/* FORM GRID */
+/* =================================
+   APPLICATION FORM GRID
+================================= */
 
 .form-grid {
   display: grid;
@@ -581,16 +476,12 @@ h1 em, h2 em {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  gap: 11px;
-}
-
-.full-width {
-  grid-column: 1 / -1;
+  gap: 10px;
 }
 
 .form-group label {
-  color: var(--green);
-  font-size: 14px;
+  color: var(--text-heading);
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -601,22 +492,15 @@ h1 em, h2 em {
   min-width: 0;
   padding: 15px 16px;
 
-  background: #FAF9F5;
-  border: 1px solid var(--border);
-  border-radius: 3px;
+  background: #FFF;
+  border: 1px solid var(--text-heading);
+  border-radius: 5px;
 
-  color: var(--text);
+  color: var(--text-heading);
   font-family: var(--body);
-  font-size: 14px;
+  font-size: 16px;
 
   outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--green-light);
 }
 
 .form-group input::placeholder,
@@ -638,34 +522,26 @@ h1 em, h2 em {
   display: none;
 }
 
-/* RESUME UPLOAD */
+/* =================================
+   RESUME UPLOAD
+================================= */
 
 .upload-area {
   width: 100%;
   min-height: 190px;
-
-  border: 1px dashed #B9BDAF;
-  background: #FAF9F5;
-
+  border: 1px dashed var(--accent);
   display: flex;
   justify-content: center;
   align-items: center;
-
   text-align: center;
   cursor: pointer;
-
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .upload-area:hover,
 .upload-area.dragging {
-  background: #F0F1E9;
-  border-color: var(--green-light);
-}
-
-.upload-content {
-  padding: 25px;
-  pointer-events: none;
+  background: var(--surface-muted);
+  border-color: var(--text-heading);
 }
 
 .upload-icon {
@@ -678,33 +554,35 @@ h1 em, h2 em {
   justify-content: center;
 
   border-radius: 50%;
-  background: #E8EADF;
+  background: var(--footer-bg);
 
-  color: var(--green);
+  color: white;
   font-size: 22px;
 }
 
 .upload-title {
-  color: var(--green);
+  color: var(--text-heading);
   font-size: 13px;
   font-weight: 600;
 }
 
 .upload-description {
   margin-top: 9px;
-  color: var(--muted);
+  color: var(--text-heading);
   font-size: 11px;
 }
 
 .file-name {
   display: block;
   margin-top: 13px;
-  color: var(--green-light);
+  color: var(--text-heading);
   font-size: 14px;
   overflow-wrap: anywhere;
 }
 
-/* PRIVACY CONSENT */
+/* =================================
+   PRIVACY
+================================= */
 
 .consent-group {
   display: flex;
@@ -715,24 +593,27 @@ h1 em, h2 em {
 
 .consent-group input {
   margin-top: 3px;
-  accent-color: var(--green);
+  accent-color: var(--text-heading);
   flex-shrink: 0;
   cursor: pointer;
 }
 
 .consent-group label {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
+  color: var(--text-heading);
+  font-size: 14px;
+  line-height: 1.5;
   cursor: pointer;
 }
 
-/* SUBMIT BUTTON */
+/* =================================
+   SUBMIT BUTTON
+================================= */
+
 
 .form-submit {
   margin-top: 35px;
   padding-top: 30px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--text-heading);
 }
 
 .form-submit button {
@@ -743,8 +624,8 @@ h1 em, h2 em {
 
   padding: 16px 27px;
 
-  background: var(--green);
-  border: 1px solid var(--green);
+  background: var(--text-heading);
+  border: 1px solid var(--text-heading);
   border-radius: 3px;
 
   color: #FFFFFF;
@@ -753,11 +634,6 @@ h1 em, h2 em {
   font-weight: 600;
 
   cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.form-submit button:hover {
-  background: var(--green-light);
 }
 
 .form-submit button:disabled {
@@ -767,17 +643,28 @@ h1 em, h2 em {
 
 .form-submit > p {
   margin-top: 16px;
-  color: var(--muted);
+  color: var(--text-heading);
   font-size: 12px;
 }
 
 /* HONEYPOT */
-
 .honeypot {
   position: absolute !important;
   left: -9999px !important;
 }
 
+
+/* =================================
+   TAX CONSULTANT
+================================= */
+
+#apply-position{
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+.general-application {
+}
 
 /* =================================
    FOOTER
@@ -787,8 +674,8 @@ h1 em, h2 em {
   width: 100%;
   padding: 65px 7% 45px;
 
-  border-top: 1px solid var(--border);
-  background: #F1F0E9;
+  border-top: 1px solid var(--text-heading);
+  background: var(--footer-bg);
 
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -802,21 +689,21 @@ h1 em, h2 em {
 }
 
 .footer-company {
-  color: var(--green);
+  color: var(--footer-heading);
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.7px;
 }
 
 .footer-brand > p {
-  color: var(--muted);
+  color: var(--footer-muted);
   font-size: 18px;
   line-height: 1.8;
   margin-top: 18px;
 }
 
 .copyright {
-  color: var(--muted);
+  color: var(--footer-muted);
   font-size: 14px;
   padding-top: 40px;
 }
@@ -843,250 +730,106 @@ h1 em, h2 em {
 }
 
 .footer-column h3 {
-  color: var(--green);
+  color: var(--footer-heading);
   font-size: 18px;
   margin-bottom: 8px;
 }
 
 .footer-column a,
 .footer-column p {
-  color: var(--muted);
+  color: var(--footer-muted);
   font-size: 16px;
   overflow-wrap: anywhere;
-  transition: color 0.3s ease;
 }
 
 .footer-column a:hover {
-  color: var(--green);
+  color: var(--footer-heading);
 }
+
 
 /* =================================
-   MOBILE MENU
+   FAQ
 ================================= */
 
-.menu-toggle {
-  display: none;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  padding: 8px;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 23px;
-  height: 2px;
-  background: var(--green);
-  margin: 6px 0;
-  transition: 0.3s ease;
-}
-
-/* =================================
-   RESPONSIVE DESIGN
-================================= */
-
-@media (max-width: 768px) {
-
-  .header {
-    min-height: 78px;
-    padding: 0 6%;
-  }
-
-  .brand {
-    font-size: 17px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .navigation {
-    display: none;
-    position: sticky;
-    top: 78px;
-    left: 0;
-
+.faq-section {
     width: 100%;
-    padding: 25px 6%;
+    padding: 85px 20px;
+    background: #ffffff;
+}
 
-    background: var(--background);
-    border-bottom: 1px solid var(--border);
+.faq-container {
+    max-width: 950px;
+    margin: 0 auto;
+}
 
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-  }
+/* FAQ LIST */
 
-  .navigation.open {
+.faq-list {
     display: flex;
-  }
+    flex-direction: column;
+    gap: 13px;
+}
 
-  .navigation a.active::after {
+/* FAQ ITEM */
+
+.faq-item {
+    border: 2px solid #e8e9ec;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--accent);
+}
+
+/* QUESTION */
+
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 24px 24px;
+    color: var(--text-heading);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.faq-item summary::-webkit-details-marker {
     display: none;
-  }
-
-  .hero {
-    min-height: 540px;
-    padding: 85px 7%;
-  }
-
-  .hero h1,
-  .page-hero h1 {
-    font-size: 43px;
-  }
-
-  .hero-decoration {
-    right: -300px;
-    opacity: 0.35;
-  }
-
-  .page-hero {
-    padding: 80px 7%;
-  }
-
-  .about-intro {
-    padding: 75px 7%;
-  }
-
-  .services-section {
-    padding: 75px 7%;
-  }
-
-  .service-card {
-    padding: 28px;
-  }
-
-  .values-section {
-    padding: 75px 7%;
-  }
-
-  .values-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .careers-content {
-    padding: 75px 7%;
-  }
-
-  .careers-heading {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .careers-heading h2 {
-    font-size: 34px;
-  }
-
-  .footer {
-    grid-template-columns: 1fr;
-    gap: 45px;
-    padding: 50px 7% 35px;
-  }
-
-  .copyright {
-    margin-top: 25px;
-    padding-top: 0;
-  }
 }
 
-/* =================================
-   SMALL MOBILE SCREENS
-================================= */
+/* ARROW */
 
-@media (max-width: 480px) {
-
-  .hero h1,
-  .page-hero h1 {
-    font-size: 37px;
-  }
-
-  .hero-content > p,
-  .page-hero > p {
-    font-size: 13px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-card {
-    padding: 30px 25px;
-  }
-
-  .values-section h2 {
-    font-size: 32px;
-  }
-
-  .job-item {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .general-application {
-    padding: 30px 25px;
-  }
-
-  .footer-columns {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  .footer-company {
-    font-size: 19px;
-  }
+.faq-arrow{
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: black;
+  font-size: 22px;
+  transition: transform 0.3s ease,
+                background 0.3s ease;
+  transform: rotate(180deg);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.01ms !important;
-  }
+.faq-item[open] .faq-arrow {
+    transform: rotate(360deg);
 }
 
-@media (max-width: 768px) {
+/* ANSWER */
 
-  .application-section {
-    padding: 75px 7%;
-  }
-
-  .application-form {
-    padding: 30px 22px;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 23px;
-  }
-
-  .full-width {
-    grid-column: auto;
-  }
-
-  .form-section-title {
-    margin-bottom: 25px;
-  }
-
-  .form-section-title:not(:first-child) {
-    margin-top: 40px;
-  }
-
-  .form-section-title h3 {
-    font-size: 21px;
-  }
-
-  .upload-area {
-    min-height: 175px;
-  }
-
-  .form-submit button {
-    width: 100%;
-  }
+.faq-answer {
+    padding: 0 25px 23px;
+    color: var(--text-heading);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
 }
